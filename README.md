@@ -8,24 +8,41 @@ I am having some problems getting a Megatronics v1 board working correctly for m
 4. Find the file `boards.txt` in the folder `hardware`. It could be in the directories `packages/Arduino`.
 5. Paste the following:
 
->megatronics.name=Megatronics
->megatronics.build.board=AVR_ATMEGA2560
->megatronics.upload.protocol=wiring
->megatronics.upload.maximum_size=258048
->megatronics.upload.speed=115200
->megatronics.bootloader.low_fuses=0xFF
->megatronics.bootloader.high_fuses=0xDA
->megatronics.bootloader.extended_fuses=0xF5
->megatronics.bootloader.path=stk500v2
->megatronics.bootloader.file=stk500boot_v2_mega2560.hex
->megatronics.bootloader.unlock_bits=0x3F
->megatronics.bootloader.lock_bits=0x0F
->megatronics.build.mcu=atmega2560
->megatronics.build.f_cpu=16000000L
->megatronics.build.core=arduino
->megatronics.build.variant=mega
->megatronics.bootloader.tool=avrdude
->megatronics.upload.tool=avrdude
+megatronics.name=Megatronics
+
+megatronics.build.board=AVR_ATMEGA2560
+
+megatronics.upload.protocol=wiring
+
+megatronics.upload.maximum_size=258048
+
+megatronics.upload.speed=115200
+
+megatronics.bootloader.low_fuses=0xFF
+
+megatronics.bootloader.high_fuses=0xDA
+
+megatronics.bootloader.extended_fuses=0xF5
+
+megatronics.bootloader.path=stk500v2
+
+megatronics.bootloader.file=stk500boot_v2_mega2560.hex
+
+megatronics.bootloader.unlock_bits=0x3F
+
+megatronics.bootloader.lock_bits=0x0F
+
+megatronics.build.mcu=atmega2560
+
+megatronics.build.f_cpu=16000000L
+
+megatronics.build.core=arduino
+
+megatronics.build.variant=mega
+
+megatronics.bootloader.tool=avrdude
+
+megatronics.upload.tool=avrdude
 
 The added lines are important in newer Arduino-IDE versions. I have tried this with Arduino 1.8.6 IDE.
 
@@ -39,3 +56,4 @@ The added lines are important in newer Arduino-IDE versions. I have tried this w
 So far this is all I got, now the bootloader seems to be installed "correctly" - at least it verifies to the correct hex value. However, I still cannot upload any Sketches yet. 
 
 There's two more things I will test: A shorter USB cable, and pressing the reset button right after compilation of the firmware.
+The issue with `stk500v2_ReciveMessage(): timeout` still remains, but the IDE seems to be correctly configured to notice the board.
