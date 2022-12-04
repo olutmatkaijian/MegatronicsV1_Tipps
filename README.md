@@ -9,23 +9,23 @@ I am having some problems getting a Megatronics v1 board working correctly for m
 5. Paste the following:
 
 >megatronics.name=Megatronics
-megatronics.build.board=AVR_ATMEGA2560
-megatronics.upload.protocol=wiring
-megatronics.upload.maximum_size=258048
-megatronics.upload.speed=115200
-megatronics.bootloader.low_fuses=0xFF
-megatronics.bootloader.high_fuses=0xDA
-megatronics.bootloader.extended_fuses=0xF5
-megatronics.bootloader.path=stk500v2
-megatronics.bootloader.file=stk500boot_v2_mega2560.hex
-megatronics.bootloader.unlock_bits=0x3F
-megatronics.bootloader.lock_bits=0x0F
-megatronics.build.mcu=atmega2560
-megatronics.build.f_cpu=16000000L
-megatronics.build.core=arduino
-megatronics.build.variant=mega
-megatronics.bootloader.tool=avrdude
-megatronics.upload.tool=avrdude
+>megatronics.build.board=AVR_ATMEGA2560
+>megatronics.upload.protocol=wiring
+>megatronics.upload.maximum_size=258048
+>megatronics.upload.speed=115200
+>megatronics.bootloader.low_fuses=0xFF
+>megatronics.bootloader.high_fuses=0xDA
+>megatronics.bootloader.extended_fuses=0xF5
+>megatronics.bootloader.path=stk500v2
+>megatronics.bootloader.file=stk500boot_v2_mega2560.hex
+>megatronics.bootloader.unlock_bits=0x3F
+>megatronics.bootloader.lock_bits=0x0F
+>megatronics.build.mcu=atmega2560
+>megatronics.build.f_cpu=16000000L
+>megatronics.build.core=arduino
+>megatronics.build.variant=mega
+>megatronics.bootloader.tool=avrdude
+>megatronics.upload.tool=avrdude
 
 The added lines are important in newer Arduino-IDE versions. I have tried this with Arduino 1.8.6 IDE.
 
