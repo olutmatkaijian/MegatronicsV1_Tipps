@@ -1,4 +1,6 @@
-# MegatronicsV1_Tipps
+For some reason the bootloader provided is absolute bumblef***. Appearantly what works is to dump a stock Marlin v3 board, then to flash the correct software. This will make the Marlin v1 usable again. More information will follow.
+
+# Kept for documentation purposes (unimportant)
 I am having some problems getting a Megatronics v1 board working correctly for my 3D-Printer. Here is a list to remove some common issues:
 
 0. Use Linux or macOS (?). If you use Windows, for some reason you will end up with a "Filename too long" error as the linking step is a longer line in the console than Windows can handle.
