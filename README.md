@@ -43,7 +43,7 @@ Should you get `stk500v2_ReciveMessage(): timeout` when burning/uploading, check
 The MEGATRONICSv3 board has an issue when used with Marlin Firmware: 
 The transistor for the FAN0_PIN yields INVERTED PWM signal. This means effectively that if you set FAN_SPEED 0, it will instead set it to FAN_SPEED 255 and vice versa. 
 To ensure correct behaviour of the HOTEND FAN, go into `Marlin-2.X.X.X/Marlin/src/gcode/temp/M106_M107.cpp` and change Line 91 to `thermalManager.set_fan_speed(pfan 255 - speed)` and Line 109 to `thermalManager.set_fan_speed(pfan, 255 - 0)`.
-After these changes compile and upload, then connect to printer. `M106 P0 S0` should now reduce fan speed significantly while `M106 P0 S255` will give fan full power. `M107` will effectively work the same as `M106 P0 S255` because of weirdness in Marlin code, and thus never turn off the fan completely. 
+After these changes compile and upload, then connect to printer. `M106 P0 S0` should now reduce fan speed significantly while `M106 P0 S255` will give fan full power. `M107` will effectively work the same as `M106 P0 S0` because of weirdness in Marlin code, and thus never turn off the fan completely. 
 
 __There is possibly an issue in the READ and WRITE macros for PINS in Marlin Firmware. Marlin Firmware does not use digitalRead or digitalWrite, but FastIO instead. This note only exists for debugging purposes.__
 
